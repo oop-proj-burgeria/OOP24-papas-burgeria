@@ -4,9 +4,10 @@ import it.unibo.papasburgeria.model.IngredientEnum;
 import it.unibo.papasburgeria.model.api.Ingredient;
 
 public class IngredientImpl implements Ingredient {
-    private IngredientEnum type;
+    private final IngredientEnum type;
     private double accuracy;
-    public IngredientImpl(IngredientEnum type){
+
+    public IngredientImpl(IngredientEnum type) {
         this.type = type;
         accuracy = 1.0;
     }
@@ -25,9 +26,9 @@ public class IngredientImpl implements Ingredient {
     public double getPlacementAccuracy() {
         return accuracy;
     }
-    
-    public String toString(){
-        return "[ type:"+this.getIngredientType()+", acc:"+this.getPlacementAccuracy()+" ]";
+
+    public String toString() {
+        return "[ type:" + this.getIngredientType() + ", acc:" + this.getPlacementAccuracy() + " ]";
     }
-    
+
 }

@@ -10,16 +10,16 @@ public class MeatImpl extends IngredientImpl {
         super(IngredientEnum.MEAT);
         cookLevel = 0;
     }
-    
-    public double getCookLevel(){
+
+    public double getCookLevel() {
         return cookLevel;
     }
 
-    public void setCookLevel(double cookLevel){
+    public void setCookLevel(double cookLevel) {
         this.cookLevel = cookLevel;
     }
 
-    public String toString(){
-        return "[ type:"+this.getIngredientType()+", acc:"+this.getPlacementAccuracy()+", cook:"+this.getCookLevel()+" ]";
+    public String toString() {
+        return "[ type:" + this.getIngredientType() + ", acc:" + this.getPlacementAccuracy() + ", cook:" + this.getCookLevel() + " ]";
     }
 }

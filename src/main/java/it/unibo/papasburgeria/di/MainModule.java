@@ -1,20 +1,21 @@
 package it.unibo.papasburgeria.di;
 
 import com.google.inject.AbstractModule;
-import com.google.inject.Provides;
-import com.google.inject.Singleton;
-import it.unibo.papasburgeria.utils.api.SoundService;
-import it.unibo.papasburgeria.utils.impl.SoundServiceImpl;
 
+/**
+ * Main Guice module that installs the rest submodules.
+ */
 public class MainModule extends AbstractModule {
+
+    /**
+     * @inheritDoc
+     */
     @Override
     protected void configure() {
-        //
-    }
-
-    @Provides
-    @Singleton
-    SoundService provideSoundService() {
-        return new SoundServiceImpl("");
+        // as per documentation, lighter modules are better, hence the subdivision
+        install(new ModelModule());
+        install(new ViewModule());
+        install(new ControllerModule());
+        install(new UtilsModule());
     }
 }

@@ -1,6 +1,6 @@
 package it.unibo.papasburgeria.model;
 
-public enum IngredientEnum{
+public enum IngredientEnum {
     BOTTOMBUN,
     TOPBUN,
     MEAT,

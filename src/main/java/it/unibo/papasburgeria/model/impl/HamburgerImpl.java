@@ -9,25 +9,25 @@ import java.util.List;
 
 public class HamburgerImpl implements Hamburger {
 
-    private ArrayList<Ingredient> ingredientList;
+    private final ArrayList<Ingredient> ingredientList;
 
-    public HamburgerImpl(){
+    public HamburgerImpl() {
         ingredientList = new ArrayList<Ingredient>();
     }
-    
-    public HamburgerImpl(ArrayList<Ingredient> ingredientList){
+
+    public HamburgerImpl(ArrayList<Ingredient> ingredientList) {
         this.ingredientList = ingredientList;
     }
 
     @Override
     public void addIngredient(Ingredient ingredient) throws Exception {
-        if(ingredientList.isEmpty() && ingredient.getIngredientType() != IngredientEnum.BOTTOMBUN){
-            throw(new UnsupportedOperationException("Bottom bun MUST be first hamburger ingredient"));
+        if (ingredientList.isEmpty() && ingredient.getIngredientType() != IngredientEnum.BOTTOMBUN) {
+            throw (new UnsupportedOperationException("Bottom bun MUST be first hamburger ingredient"));
         }
 
-        if(!ingredientList.isEmpty()){
-            if(ingredientList.get(ingredientList.size()-1).getIngredientType().equals(IngredientEnum.TOPBUN) ){
-                throw(new UnsupportedOperationException("Top bun MUST be last hamburger ingredient"));
+        if (!ingredientList.isEmpty()) {
+            if (ingredientList.get(ingredientList.size() - 1).getIngredientType().equals(IngredientEnum.TOPBUN)) {
+                throw (new UnsupportedOperationException("Top bun MUST be last hamburger ingredient"));
             }
         }
 
@@ -39,7 +39,7 @@ public class HamburgerImpl implements Hamburger {
         return ingredientList;
     }
 
-    public String toString(){
+    public String toString() {
         String sb = "[ ";
         for (Ingredient ingredient : ingredientList) {
             sb = sb + ingredient.toString() + ", ";
@@ -48,5 +48,5 @@ public class HamburgerImpl implements Hamburger {
 
         return sb;
     }
-    
+
 }
