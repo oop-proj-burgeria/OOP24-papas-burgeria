@@ -6,16 +6,16 @@ import it.unibo.papasburgeria.model.IngredientEnum;
 import it.unibo.papasburgeria.model.impl.IngredientImpl;
 import it.unibo.papasburgeria.model.impl.MeatImpl;
 
-//import com.google.inject.Guice;
-//import com.google.inject.Injector;
-//import com.google.inject.Stage;
-//import it.unibo.papasburgeria.di.MainModule;
+import com.google.inject.Guice;
+import com.google.inject.Injector;
+import com.google.inject.Stage;
+import it.unibo.papasburgeria.di.MainModule;
 
 public class Main {
 
     public static void main(final String[] args) {
         // Using production stage to construct services before the game logic starts
-        //Injector injector = Guice.createInjector(Stage.PRODUCTION, new MainModule());
+        Injector injector = Guice.createInjector(Stage.PRODUCTION, new MainModule());
 
         Hamburger burger1 = new HamburgerImpl();
         try {
