@@ -1,16 +1,15 @@
 package it.unibo.papasburgeria.model.impl;
 
+import it.unibo.papasburgeria.model.UpgradeEnum;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
 
-import it.unibo.papasburgeria.model.UpgradeEnum;
+import java.util.Map;
 
 import static org.junit.jupiter.api.Assertions.assertEquals;
 import static org.junit.jupiter.api.Assertions.assertFalse;
 import static org.junit.jupiter.api.Assertions.assertNotSame;
 import static org.junit.jupiter.api.Assertions.assertTrue;
-
-import java.util.Map;
 
 /**
  * Test class for {@link ShopModelImpl}.
@@ -45,7 +44,7 @@ class ShopModelImplTest {
         final UpgradeEnum upgrade = UpgradeEnum.CUSTOMER_MORE_TIP;
         shop.unlockUpgrade(upgrade);
         assertTrue(shop.isUpgradeUnlocked(upgrade),
-        "Upgrade should be unlocked after calling unlockUpgrade.");
+                "Upgrade should be unlocked after calling unlockUpgrade.");
     }
 
     /**
@@ -57,7 +56,7 @@ class ShopModelImplTest {
         shop.unlockUpgrade(upgrade);
         shop.lockUpgrade(upgrade);
         assertFalse(shop.isUpgradeUnlocked(upgrade),
-        "Upgrade should be locked after calling lockUpgrade.");
+                "Upgrade should be locked after calling lockUpgrade.");
     }
 
     /**
@@ -103,9 +102,9 @@ class ShopModelImplTest {
     void testGetUpgradesReturnsCopy() {
         final Map<UpgradeEnum, Boolean> upgradesCopy = shop.getUpgrades();
         assertNotSame(upgradesCopy, shop.getUpgrades(),
-        "getUpgrades() should return a copy.");
+                "getUpgrades() should return a copy.");
         upgradesCopy.put(UpgradeEnum.PLACEMENT_TOLERANCE, true); // This should not affect the internal state
         assertFalse(shop.isUpgradeUnlocked(UpgradeEnum.PLACEMENT_TOLERANCE),
-        "Internal state should not be changed by modifying the returned map.");
+                "Internal state should not be changed by modifying the returned map.");
     }
 }

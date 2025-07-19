@@ -66,7 +66,7 @@ public class MenuControllerImpl implements MenuController {
 
                 return transformed;
             }
-        } catch (final IOException e) { 
+        } catch (final IOException e) {
             return Collections.emptyList();
         }
 

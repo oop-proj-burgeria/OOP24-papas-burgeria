@@ -216,7 +216,7 @@ public class CustomerControllerImpl implements CustomerController {
         final double similarityPercentageWeight = 6.0;
         final double placementPercentageWeight = 2.0;
         return (difficultyPercentage + similarityPercentage * similarityPercentageWeight
-        + placementPercentage * placementPercentageWeight + pattySimilarityPercentage) / 10;
+                + placementPercentage * placementPercentageWeight + pattySimilarityPercentage) / 10;
     }
 
     /**

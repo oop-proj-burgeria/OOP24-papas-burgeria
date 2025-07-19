@@ -7,23 +7,27 @@ public enum LineEnum {
     /**
      * Defines the line where customers wait to give their order to the register.
      */
-    REGISTER_LINE(0, "register_line"), 
+    REGISTER_LINE(0, "register_line"),
     /**
      * Defines the line where customers wait their orders.
      */
     WAIT_LINE(1, "wait_line");
 
-    /** Line value id. */
+    /**
+     * Line value id.
+     */
     private final int value;
 
-    /** Line name id. */
+    /**
+     * Line name id.
+     */
     private final String lineName;
 
     /**
      * Contructs a new LineEnum.
      *
-     * @param value     line id.
-     * @param lineName  line name.
+     * @param value    line id.
+     * @param lineName line name.
      */
     LineEnum(final int value, final String lineName) {
         this.value = value;

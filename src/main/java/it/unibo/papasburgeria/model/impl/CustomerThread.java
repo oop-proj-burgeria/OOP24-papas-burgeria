@@ -44,7 +44,7 @@ class CustomerThread extends Thread {
                     interrupt();
                 } else {
                     model.addCustomerToLine(new CustomerModelImpl(unlockedIngredients, generatedCustomers + 1),
-                    LineEnum.REGISTER_LINE);
+                            LineEnum.REGISTER_LINE);
                     generatedCustomers++;
                     if (generatedCustomers >= customerAmount) {
                         interrupt();

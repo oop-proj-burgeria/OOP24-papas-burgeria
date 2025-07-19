@@ -1,13 +1,12 @@
 package it.unibo.papasburgeria.model.impl;
 
-import static org.junit.jupiter.api.Assertions.assertEquals;
-import static org.junit.jupiter.api.Assertions.assertNotSame;
-
+import it.unibo.papasburgeria.model.api.HamburgerModel;
+import it.unibo.papasburgeria.model.api.OrderModel;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
 
-import it.unibo.papasburgeria.model.api.HamburgerModel;
-import it.unibo.papasburgeria.model.api.OrderModel;
+import static org.junit.jupiter.api.Assertions.assertEquals;
+import static org.junit.jupiter.api.Assertions.assertNotSame;
 
 /**
  * Test class for {@link OrderModelImpl}.
@@ -54,8 +53,8 @@ class OrderModelImplTest {
         final OrderModel copiedOrder = order.copyOf();
         assertNotSame(order, copiedOrder, "copyOf() should return a different instance.");
         assertEquals(order.getOrderNumber(), copiedOrder.getOrderNumber(),
-        "Copied order should have the same order number.");
+                "Copied order should have the same order number.");
         assertEquals(order.getHamburger().getIngredients(),
-        copiedOrder.getHamburger().getIngredients(), "Hamburgers should be equal.");
+                copiedOrder.getHamburger().getIngredients(), "Hamburgers should be equal.");
     }
 }

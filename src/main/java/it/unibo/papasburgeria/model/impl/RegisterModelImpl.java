@@ -91,7 +91,7 @@ public class RegisterModelImpl implements RegisterModel {
     @Override
     public String toString() {
         return "[CustomerManager: [registerLine=" + lineList.get(LineEnum.REGISTER_LINE.getValue())
-        + "], [waitLine=" + lineList.get(LineEnum.WAIT_LINE.getValue()) + "] ]";
+                + "], [waitLine=" + lineList.get(LineEnum.WAIT_LINE.getValue()) + "] ]";
     }
 
     /**

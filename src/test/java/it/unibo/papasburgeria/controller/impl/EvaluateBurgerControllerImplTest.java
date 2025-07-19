@@ -1,25 +1,24 @@
 package it.unibo.papasburgeria.controller.impl;
 
+import it.unibo.papasburgeria.model.IngredientEnum;
+import it.unibo.papasburgeria.model.api.GameModel;
+import it.unibo.papasburgeria.model.api.HamburgerModel;
+import it.unibo.papasburgeria.model.api.IngredientModel;
+import it.unibo.papasburgeria.model.api.OrderModel;
+import it.unibo.papasburgeria.model.impl.GameModelImpl;
+import it.unibo.papasburgeria.model.impl.HamburgerModelImpl;
+import it.unibo.papasburgeria.model.impl.IngredientModelImpl;
+import it.unibo.papasburgeria.model.impl.OrderModelImpl;
+import org.junit.jupiter.api.BeforeEach;
+import org.junit.jupiter.api.Test;
+
+import java.util.List;
+
 import static org.junit.jupiter.api.Assertions.assertEquals;
 import static org.junit.jupiter.api.Assertions.assertNotNull;
 import static org.junit.jupiter.api.Assertions.assertNotSame;
 import static org.junit.jupiter.api.Assertions.assertNull;
 import static org.junit.jupiter.api.Assertions.assertTrue;
-
-import java.util.List;
-
-import org.junit.jupiter.api.BeforeEach;
-import org.junit.jupiter.api.Test;
-
-import it.unibo.papasburgeria.model.IngredientEnum;
-import it.unibo.papasburgeria.model.api.GameModel;
-import it.unibo.papasburgeria.model.impl.GameModelImpl;
-import it.unibo.papasburgeria.model.api.HamburgerModel;
-import it.unibo.papasburgeria.model.impl.HamburgerModelImpl;
-import it.unibo.papasburgeria.model.api.IngredientModel;
-import it.unibo.papasburgeria.model.api.OrderModel;
-import it.unibo.papasburgeria.model.impl.IngredientModelImpl;
-import it.unibo.papasburgeria.model.impl.OrderModelImpl;
 
 /**
  * Unit tests for {@link EvaluateBurgerControllerImpl}.
@@ -41,9 +40,9 @@ class EvaluateBurgerControllerImplTest {
     @Test
     void testGetHamburgerOnAssembly() {
         final HamburgerModel original = new HamburgerModelImpl(List.of(
-            new IngredientModelImpl(IngredientEnum.BOTTOM_BUN),
-            new IngredientModelImpl(IngredientEnum.LETTUCE),
-            new IngredientModelImpl(IngredientEnum.TOP_BUN)));
+                new IngredientModelImpl(IngredientEnum.BOTTOM_BUN),
+                new IngredientModelImpl(IngredientEnum.LETTUCE),
+                new IngredientModelImpl(IngredientEnum.TOP_BUN)));
 
         gameModel.setHamburgerOnAssembly(original);
 
@@ -60,9 +59,9 @@ class EvaluateBurgerControllerImplTest {
     @Test
     void testGetSelectedOrder() {
         final HamburgerModel original = new HamburgerModelImpl(List.of(
-            new IngredientModelImpl(IngredientEnum.BOTTOM_BUN),
-            new IngredientModelImpl(IngredientEnum.LETTUCE),
-            new IngredientModelImpl(IngredientEnum.TOP_BUN)));
+                new IngredientModelImpl(IngredientEnum.BOTTOM_BUN),
+                new IngredientModelImpl(IngredientEnum.LETTUCE),
+                new IngredientModelImpl(IngredientEnum.TOP_BUN)));
 
         gameModel.setSelectedOrder(new OrderModelImpl(original, 0));
 
@@ -70,7 +69,7 @@ class EvaluateBurgerControllerImplTest {
 
         assertNotNull(copy);
         assertEquals(original.getIngredients(),
-        copy.getHamburger().getIngredients());
+                copy.getHamburger().getIngredients());
         assertNotSame(original, copy, "Returned order should be a copy");
     }
 
@@ -89,9 +88,9 @@ class EvaluateBurgerControllerImplTest {
     @Test
     void testEmptyHamburgerOnAssembly() {
         final List<IngredientModel> ingredients = List.of(
-            new IngredientModelImpl(IngredientEnum.BOTTOM_BUN),
-            new IngredientModelImpl(IngredientEnum.LETTUCE),
-            new IngredientModelImpl(IngredientEnum.TOP_BUN));
+                new IngredientModelImpl(IngredientEnum.BOTTOM_BUN),
+                new IngredientModelImpl(IngredientEnum.LETTUCE),
+                new IngredientModelImpl(IngredientEnum.TOP_BUN));
         final HamburgerModel original = new HamburgerModelImpl(ingredients);
 
         gameModel.setHamburgerOnAssembly(original);

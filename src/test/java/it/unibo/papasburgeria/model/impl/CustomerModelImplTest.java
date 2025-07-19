@@ -1,11 +1,10 @@
 package it.unibo.papasburgeria.model.impl;
 
-import static org.junit.jupiter.api.Assertions.assertEquals;
-
+import it.unibo.papasburgeria.model.api.CustomerModel;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
 
-import it.unibo.papasburgeria.model.api.CustomerModel;
+import static org.junit.jupiter.api.Assertions.assertEquals;
 
 /**
  * Test class for {@link CustomerModelImpl}.

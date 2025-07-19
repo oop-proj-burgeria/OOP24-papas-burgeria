@@ -304,7 +304,8 @@ public class EvaluateBurgerViewImpl extends AbstractBaseView {
      * {@inheritDoc}
      */
     @Override
-    public void hideScene() { }
+    public void hideScene() {
+    }
 
     /**
      * {@inheritDoc}

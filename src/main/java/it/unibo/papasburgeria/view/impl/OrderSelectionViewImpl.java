@@ -141,7 +141,8 @@ public class OrderSelectionViewImpl extends AbstractBaseView implements SpriteDr
      * {@inheritDoc}
      */
     @Override
-    public void hideScene() { }
+    public void hideScene() {
+    }
 
     /**
      * {@inheritDoc}

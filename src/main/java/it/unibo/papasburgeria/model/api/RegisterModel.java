@@ -30,7 +30,7 @@ public interface RegisterModel {
      * Get the selected line line.
      *
      * @param line the selected line.
-     * @return     the returned line.
+     * @return the returned line.
      */
     List<CustomerModel> getLine(LineEnum line);
 
