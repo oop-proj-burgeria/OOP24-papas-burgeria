@@ -261,23 +261,26 @@ public class GrillViewImpl extends AbstractBaseView implements SpriteDropListene
      */
     @Override
     public void spriteClicked(final Sprite sprite) {
-        final double pbPositionXScale = sprite.getPbPositionXScale();
-        final double pbPositionYScale = sprite.getPbPositionYScale();
-        final PattyModel patty = (PattyModel) sprite.getIngredient();
+        // sprite is null if you're not clicking on a copy, this needs better handling
+        if (sprite != null) {
+            final double pbPositionXScale = sprite.getPbPositionXScale();
+            final double pbPositionYScale = sprite.getPbPositionYScale();
+            final PattyModel patty = (PattyModel) sprite.getIngredient();
 
-        if (pbPositionXScale > MIN_X_POS_SCALE_TO_DROP_ON_GRILL
-                && pbPositionXScale < MAX_X_POS_SCALE_TO_DROP_ON_GRILL
-                && pbPositionYScale > MIN_Y_POS_SCALE_TO_DROP_ON_GRILL
-                && pbPositionYScale < MAX_Y_POS_SCALE_TO_DROP_ON_GRILL) {
-            controller.flipPatty(patty);
-            draggablePattiesOnGrill.clear();
+            if (pbPositionXScale > MIN_X_POS_SCALE_TO_DROP_ON_GRILL
+                    && pbPositionXScale < MAX_X_POS_SCALE_TO_DROP_ON_GRILL
+                    && pbPositionYScale > MIN_Y_POS_SCALE_TO_DROP_ON_GRILL
+                    && pbPositionYScale < MAX_Y_POS_SCALE_TO_DROP_ON_GRILL) {
+                controller.flipPatty(patty);
+                draggablePattiesOnGrill.clear();
+            }
+
+            draggableRawPatties.remove(sprite);
+            draggablePattiesOnGrill.remove(sprite);
+            draggableCookedPatties.remove(sprite);
+
+            stopCooking = false;
         }
-
-        draggableRawPatties.remove(sprite);
-        draggablePattiesOnGrill.remove(sprite);
-        draggableCookedPatties.remove(sprite);
-
-        stopCooking = false;
     }
 
     /**
